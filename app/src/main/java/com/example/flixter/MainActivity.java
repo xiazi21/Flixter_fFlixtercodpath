@@ -1,4 +1,4 @@
-package com.example.flixter;
+ package com.example.flixter;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onSuccess");
                 JSONObject jsonObject = json.jsonObject;
                 try {
-                    JSONArray results = jsonObject.getJSONArray("result");
+                    JSONArray results = jsonObject.getJSONArray("results");
                     Log.i(TAG,"Results" + results.toString());
                     movies.addAll(Movie.fromJsonArray(results));
                     movieAdapter.notifyDataSetChanged();
