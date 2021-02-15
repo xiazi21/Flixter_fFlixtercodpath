@@ -19,6 +19,8 @@ import com.example.flixter.models.Movie;
 
 import java.util.List;
 
+
+
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
 
     Context context;
@@ -52,7 +54,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     // Return the total count of the items in the list
     @Override
     public int getItemCount() {
-
         return movies.size();
     }
 
