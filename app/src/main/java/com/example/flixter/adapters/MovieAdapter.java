@@ -20,6 +20,8 @@ import com.example.flixter.DetailActivity;
 import com.example.flixter.R;
 import com.example.flixter.models.Movie;
 
+import org.parceler.Parcels;
+
 import java.util.List;
 
 
@@ -89,11 +91,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             }
 
             Glide.with(context).load(imageUrl).into(ivPoster);
+            //1.Register click listener on the whole row
             container.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //2.Navigate to a new activity tap
                     Intent i = new Intent(context, DetailActivity.class);
+                    i.putExtra("title",movie.getTitle());
+                    i.putExtra("movie", Parcels.wrap(movie));
                     context.startActivity(i);
                 }
             });
